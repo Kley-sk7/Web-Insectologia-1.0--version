@@ -1,0 +1,577 @@
+/* resources/css/includes/coleoptera.css */
+:root {
+    /* Variables de color consistentes con el historial */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-primary: #14b8a6;
+    --color-secondary: #0891b2;
+    --color-accent: #1d4ed8;
+    --color-navbar-bg: #ffffff;
+    --color-button-primary: #3aabec;
+    --color-button-hover: #2d4373;
+    --color-success: #4CAF50;
+    --color-error: #f44336;
+    --color-warning: #ff9800;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+    --color-shadow-hover: rgba(0, 0, 0, 0.15);
+    --color-card-shadow: rgba(0, 0, 0, 0.08);
+    --color-card-shadow-hover: rgba(0, 0, 0, 0.12);
+    --color-border: #dddddd;
+    --color-border-focus: #14b8a6;
+    --color-background: #f0f8ff;
+    --color-section-bg: #e6f2ff;
+    --color-text-dark: #333333;
+    --color-text-medium: #555555;
+    --color-text-light: #666666;
+    --color-footer-bg: #f8f9fa;
+}
+
+/* Estilos base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Young Serif', serif;
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    padding-top: 80px;
+}
+
+/* Page Header - Mejorado */
+.page-header {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+    color: var(--color-white);
+    padding: 60px 0;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+    animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { 
+        background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+    }
+    50% { 
+        background: linear-gradient(135deg, var(--color-secondary), var(--color-accent), var(--color-primary));
+    }
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.lead {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: titleEntrance 0.8s ease-out;
+    position: relative;
+    display: inline-block;
+}
+
+@keyframes titleEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.lead::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--color-white);
+    border-radius: 2px;
+    animation: lineExpand 1s ease-out 0.5s both;
+}
+
+@keyframes lineExpand {
+    from { width: 0; }
+    to { width: 100px; }
+}
+
+/* Sección de introducción */
+.ordenes-insectos-section {
+    animation: sectionEntrance 0.6s ease-out;
+}
+
+@keyframes sectionEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.introduccion-ordenes {
+    font-size: 1.2rem;
+    color: var(--color-text-medium);
+    text-align: justify;
+    line-height: 1.8;
+    padding: 0 20px;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Grid de tarjetas - Ajustado para imágenes más grandes */
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+    animation: gridEntrance 0.8s ease-out 0.5s both;
+}
+
+@keyframes gridEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Tarjetas de especies - Rediseñadas para imágenes prominentes */
+.orden-card {
+    background: var(--color-white);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px var(--color-card-shadow);
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    animation: cardEntrance 0.6s ease-out;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.orden-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    z-index: 2;
+}
+
+.orden-card:hover::before {
+    transform: scaleX(1);
+}
+
+.orden-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px var(--color-card-shadow-hover);
+}
+
+/* Enlaces de las tarjetas */
+.orden-link-wrapper {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.orden-link-wrapper:hover {
+    text-decoration: none;
+    color: inherit;
+    transform: translateY(-3px);
+}
+
+/* ===== SECCIÓN MEJORADA DE IMÁGENES ===== */
+
+/* Contenedor de imágenes - MÁS GRANDE y profesional */
+.image-container {
+    width: 100%;
+    height: 280px; /* Aumentado de 200px a 280px */
+    overflow: hidden;
+    position: relative;
+    background: var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+    filter: brightness(0.95);
+}
+
+.orden-card:hover .image-container img {
+    transform: scale(1.15); /* Zoom más pronunciado */
+    filter: brightness(1.05);
+}
+
+/* Efecto de overlay profesional en hover */
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(8, 145, 178, 0.1));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.orden-card:hover .image-container::after {
+    opacity: 1;
+}
+
+/* Icono de vista que aparece al hover */
+.image-container::before {
+    content: '👁️';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 2rem;
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.4s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.orden-card:hover .image-container::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Contenido de las tarjetas - Reorganizado */
+.card-content {
+    padding: 2rem;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.orden-nombre {
+    font-size: 1.5rem; /* Ligeramente más grande */
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+    font-family: 'Georgia', serif;
+    line-height: 1.3;
+}
+
+.orden-card:hover .orden-nombre {
+    color: var(--color-primary);
+}
+
+.nombre-comun {
+    font-size: 1.1rem; /* Ligeramente más grande */
+    color: var(--color-text-medium);
+    font-style: italic;
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+/* Placeholder para imágenes faltantes - MEJORADO */
+.placeholder-image {
+    width: 100%;
+    height: 100%;
+    min-height: 280px; /* Aumentado para coincidir con las imágenes */
+    background: linear-gradient(135deg, var(--color-section-bg), var(--color-background));
+    border: 3px dashed var(--color-border);
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.orden-card:hover .placeholder-image {
+    border-color: var(--color-primary);
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    transform: scale(1.02);
+}
+
+.placeholder-image .text-muted {
+    transition: all 0.3s ease;
+}
+
+.orden-card:hover .placeholder-image .text-muted {
+    color: var(--color-primary) !important;
+}
+
+.placeholder-image i {
+    font-size: 3rem; /* Icono más grande */
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.orden-card:hover .placeholder-image i {
+    transform: scale(1.2);
+    color: var(--color-primary);
+}
+
+/* Animaciones escalonadas para las tarjetas */
+.col {
+    animation: cardStagger 0.6s ease-out both;
+}
+
+@keyframes cardStagger {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Establecer delays escalonados para las tarjetas */
+.col:nth-child(1) { animation-delay: 0.1s; }
+.col:nth-child(2) { animation-delay: 0.2s; }
+.col:nth-child(3) { animation-delay: 0.3s; }
+.col:nth-child(4) { animation-delay: 0.4s; }
+.col:nth-child(5) { animation-delay: 0.5s; }
+.col:nth-child(6) { animation-delay: 0.6s; }
+.col:nth-child(7) { animation-delay: 0.7s; }
+.col:nth-child(8) { animation-delay: 0.8s; }
+
+/* Efectos de hover mejorados */
+.orden-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.orden-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transition: left 0.6s;
+    z-index: 1;
+}
+
+.orden-card:hover::after {
+    left: 100%;
+}
+
+/* ===== RESPONSIVE DESIGN ACTUALIZADO ===== */
+
+@media (max-width: 1200px) {
+    .tarjetas {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+    }
+    
+    .image-container {
+        height: 260px;
+    }
+    
+    .placeholder-image {
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .page-header {
+        padding: 40px 0;
+        margin-bottom: 30px;
+    }
+
+    .lead {
+        font-size: 2.5rem;
+    }
+
+    .ordenes-insectos-section {
+        padding: 2rem 0 !important;
+    }
+
+    .introduccion-ordenes {
+        font-size: 1.1rem;
+        padding: 0 10px;
+        text-align: left;
+    }
+
+    .tarjetas {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+
+    .orden-nombre {
+        font-size: 1.3rem;
+    }
+
+    .image-container {
+        height: 220px;
+    }
+    
+    .placeholder-image {
+        min-height: 220px;
+    }
+    
+    .image-container::before {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lead {
+        font-size: 2rem;
+    }
+
+    .page-header {
+        padding: 30px 0;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .orden-card {
+        margin: 0 10px;
+    }
+
+    .introduccion-ordenes {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .image-container {
+        height: 200px;
+    }
+    
+    .placeholder-image {
+        min-height: 200px;
+    }
+    
+    .card-content {
+        padding: 1.25rem;
+    }
+    
+    .orden-nombre {
+        font-size: 1.2rem;
+    }
+    
+    .nombre-comun {
+        font-size: 1rem;
+    }
+}
+
+/* Estados de carga */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    border: 3px solid var(--color-primary);
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mejoras de accesibilidad */
+.orden-link-wrapper:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+    border-radius: 20px;
+}
+
+/* Efectos de transición suaves */
+* {
+    scroll-behavior: smooth;
+}
+
+/* Optimizaciones para rendimiento */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+

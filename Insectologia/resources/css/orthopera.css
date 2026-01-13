@@ -1,0 +1,32 @@
+
+        .placeholder-image {
+            height: 200px;
+            border: 2px dashed #dee2e6;
+        }
+        .orden-card {
+            transition: transform 0.3s ease;
+        }
+        .orden-card:hover {
+            transform: translateY(-5px);
+        }
+        .image-container img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .orden-link-wrapper {
+            text-decoration: none;
+            color: inherit;
+        }
+        .orden-link-wrapper:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        

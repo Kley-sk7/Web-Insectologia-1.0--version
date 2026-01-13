@@ -1,0 +1,447 @@
+:root {
+    /* Variables de color */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-primary: #14b8a6;
+    --color-secondary: #0891b2;
+    --color-accent: #1d4ed8;
+    --color-navbar-bg: #ffffff; /* Cambiado a blanco para mejor visibilidad */
+    --color-button-primary: #3b5998;
+    --color-button-hover: #2d4373;
+    --color-button-outline: #bf594c;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+    --color-shadow-hover: rgba(0, 0, 0, 0.15);
+    --color-card-shadow: rgba(0, 0, 0, 0.08);
+    --color-card-shadow-hover: rgba(0, 0, 0, 0.12);
+    --color-divider: #dddddd;
+    --color-text-dark: #333333;
+    --color-text-medium: #555555;
+    --color-text-light: #ffffff;
+    --color-footer-bg: #f8f9fa;
+    --color-card-bg: #ffffff;
+    
+    /* Variables de tipografía */
+
+    --font-size-xs: 0.8rem;
+    --font-size-sm: 1rem;
+    --font-size-md: 1.15rem;
+    --font-size-lg: 1.3rem;
+    --font-size-xl: 1.8rem;
+    --font-size-xxl: 2rem;
+    --font-size-xxxl: 2.5rem;
+    --font-size-hero: 3.25rem;
+    
+    /* Variables de espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.2rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 1.8rem;
+    --spacing-xxl: 2rem;
+    --spacing-section: 2rem;
+    --spacing-large-section: 3rem;
+    
+    /* Variables de borde */
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 10px;
+    
+    /* Variables de sombra */
+    --shadow-sm: 0 2px 8px var(--color-shadow);
+    --shadow-md: 0 4px 6px var(--color-shadow);
+    --shadow-lg: 0 6px 8px var(--color-shadow-hover);
+    --shadow-xl: 0 6px 24px var(--color-card-shadow-hover);
+    --shadow-card: 0 2px 12px var(--color-card-shadow);
+    --shadow-navbar: 0 2px 10px var(--color-shadow);
+}
+
+* {
+    font-family: 'Young', Serif;
+}
+
+/* estilos sin bottstrap para mantener el orden del proyecto */
+.titulo-ordenes-principal {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-hero);
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    animation: fadeInUp 0.8s ease-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.descripcion-ordenes {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-lg);
+    font-weight: 650;
+    color: var(--color-text-medium);
+    text-align: center; /* Cambiado de justify a center */
+    line-height: 1.6;
+    margin-bottom: var(--spacing-large-section);
+    max-width: 100%; /* Ocupa todo el ancho disponible */
+    width: 100%; /* Asegura el 100% del ancho */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Un poco de padding en los lados */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+/* ESTILOS BASE */
+body {
+    padding-top: 90px; /* Espacio para el navbar fijo */
+    font-family: var(--font-primary);
+    padding-bottom: 60px;
+    background-color: var(--color-white);
+    margin: 0;
+}
+
+/* BOTONES NUEVOS DEL NAVBAR */
+.navbar-nuevo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: auto;
+    padding: 20px 0 40px 0;
+    width: auto;
+}
+
+.navbar-buttons-nuevo {
+    display: flex;
+    gap: 90px;
+}
+
+.btn-outline-nuevo {
+    background-color: var(--color-button-primary);
+    color: var(--color-text-light);
+    padding: 12px 25px;
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-outline-nuevo::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+.btn-outline-nuevo:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-outline-nuevo:hover {
+    background-color: var(--color-button-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* HEADER DE PÁGINA */
+.page-header {
+    background: linear-gradient(to left, var(--color-primary), var(--color-secondary), var(--color-accent));
+    color: var(--color-text-light);
+    padding: 50px 0;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+.lead {
+    font-size: var(--font-size-hero);
+    font-weight: 600;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* SECCIÓN DE TARJETAS */
+.titulo-ordenes {
+    font-family: var(--font-primary);
+    font-weight: bold;
+    color: var(--color-text-dark);
+    padding-bottom: 10px;
+    margin-bottom: var(--spacing-large-section) !important;
+    position: relative;
+}
+
+.titulo-ordenes::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+    border-radius: 2px;
+}
+
+.introduccion-ordenes {
+    font-size: var(--font-size-md);
+    color: var(--color-text-medium);
+    text-align: justify;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: var(--spacing-xxl);
+    margin-top: var(--spacing-xxl);
+}
+
+.orden-card {
+    background: var(--color-card-bg);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.orden-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.orden-card:hover::before {
+    transform: scaleX(1);
+}
+
+.orden-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: var(--shadow-xl);
+}
+
+.image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-sm);
+    padding: 20px 20px 0 20px;
+}
+
+.image-container img {
+    max-width: 120px;
+    max-height: 120px;
+    object-fit: cover;
+    border-radius: var(--border-radius-sm);
+    transition: transform 0.3s ease;
+}
+
+.orden-card:hover .image-container img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    text-align: center;
+    padding: 0 20px 20px 20px;
+}
+
+.orden-nombre {
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-dark);
+    transition: color 0.3s ease;
+}
+
+.orden-card:hover .orden-nombre {
+    color: var(--color-primary);
+}
+
+.orden-ejemplos {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-medium);
+}
+
+.orden-link-wrapper {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.orden-link-wrapper:hover {
+    transform: translateY(-2px);
+}
+
+/* DIVIDER Y FOOTER */
+.divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-divider), transparent);
+    margin:0 0;
+}
+
+.brand-footer {
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    background-color: var(--color-footer-bg);
+    margin-top: 0x;
+}
+
+.brand-name {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--color-text-dark);
+}
+
+/* ANIMACIONES */
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.orden-card {
+    animation: cardEntrance 0.6s ease-out;
+}
+
+.orden-card:nth-child(1) { animation-delay: 0.1s; }
+.orden-card:nth-child(2) { animation-delay: 0.2s; }
+.orden-card:nth-child(3) { animation-delay: 0.3s; }
+.orden-card:nth-child(4) { animation-delay: 0.4s; }
+.orden-card:nth-child(5) { animation-delay: 0.5s; }
+.orden-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* DISEÑO RESPONSIVE */
+@media (max-width: 1200px) {
+    .tarjetas {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* AJUSTE PARA MÓVIL */
+    }
+    
+    .nav-buttons {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .navbar-collapse {
+        padding: 10px 0;
+    }
+
+    .logo {
+        height: 50px;
+        margin-right: 20px;
+    }
+
+    .navbar-buttons-nuevo {
+        gap: 10px;
+    }
+
+    .lead {
+        font-size: var(--font-size-xxxl);
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .page-header {
+        padding: 40px 0;
+        margin-bottom: 40px;
+    }
+
+    .brand-name {
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding-top: 60px; /* AJUSTE PARA PANTALLAS PEQUEÑAS */
+    }
+    
+    .lead {
+        font-size: var(--font-size-xxl);
+    }
+
+    .navbar {
+        padding: var(--spacing-xs);
+    }
+
+    .logo {
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    .page-header {
+        padding: 30px 0;
+        margin-bottom: 30px;
+    }
+
+    .introduccion-ordenes {
+        font-size: var(--font-size-sm);
+        text-align: left;
+    }
+
+    .brand-footer {
+        padding: var(--spacing-sm) 0;
+        margin-top: 0;
+    }
+}

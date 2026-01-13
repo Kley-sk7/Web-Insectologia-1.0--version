@@ -1,0 +1,154 @@
+
+        .table-image {
+            width: 100px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .table-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .no-image-table {
+            padding: 15px;
+            text-align: center;
+            color: #6c757d;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .etapa-badge {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+        
+        .table th {
+            background-color: #4892dbff !important;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        .table td {
+            vertical-align: middle;
+        }
+        
+        .section-title {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 5px;
+        }
+        
+        .badge {
+            font-size: 0.7rem;
+            padding: 4px 8px;
+        }
+        
+        .table-hover tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+        .header-bg {
+            background: linear-gradient(to left, #14b8a6, #0891b2, #1d4ed8);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .etapa-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+            position: relative;
+            border: 1px solid #e9ecef;
+        }
+
+        .etapa-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .etapa-title-box {
+            position: absolute;
+            top: -12px;
+            left: 15px;
+            background: #f8f9fa;
+            color: #495057;
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: 1px solid #dee2e6;
+        }
+
+        .etapa-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+        }
+
+        .no-image {
+            width: 100%;
+            height: 200px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .section-title {
+            color: #0b5f54;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .summary-table th {
+            background: #0b5f54;
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .summary-table td {
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .etapa-cell {
+            font-weight: 600;
+            text-align: left !important;
+        }
+
+        .descripcion-cell {
+            text-align: left !important;
+            font-size: 0.85rem;
+        }
+
+        .check-mark {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .info-badge {
+            background: #e9ecef;
+            color: #495057;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
